@@ -1,0 +1,167 @@
+{% if user.is_authenticated %} {% if user.is_superuser or user.is_staff %}
+<div class="wrapper toggled">
+  <nav id="sidebar" class="sidebar">
+    <div class="sidebar-content">
+      <ul class="flex-column">
+        <li class="nav-item active1">
+          <a class="nav-link" href="{% url 'staff' %}">
+            <i class="bi bi-houses-fill px-1"></i> Dashboard
+          </a>
+        </li>
+        <li>
+          <hr class="dropdown-divider" />
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'users_list' %}">
+            <i class="bi bi-people px-1"></i> Users
+          </a>
+        </li>
+
+        <li class="nav-item sidenav-drop">
+          <a
+            class="nav-link sidebar-link link"
+            href="#submenu11"
+            data-bs-toggle="collapse"
+          >
+            <i class="bi bi-pc-display mr10"></i> Services
+          </a>
+          <ul
+            class="collapse navbar-nav drop-menu"
+            id="submenu11"
+            data-bs-parent="#menu"
+          >
+            <li class="">
+              <a href="{%  url 'job_list' %}" class="nav-link px-3">
+                <span class="">
+                  <i class="bi bi-phone-flip mr10"></i> Jobs
+                </span>
+              </a>
+            </li>
+
+          </ul>
+        </li>
+        <ul class="nav flex-column navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'online_application_list' %}">
+              <i class="bi bi-chat-square-quote mr10"></i> Applications
+            </a>
+          </li>
+        </ul>
+        <li class="nav-item sidenav-drop">
+          <a
+            class="nav-link sidebar-link link"
+            href="#submenu11"
+            data-bs-toggle="collapse"
+          >
+            <i class="bi bi-rss mr10"></i>Feeds
+          </a>
+          <ul
+            class="collapse navbar-nav drop-menu"
+            id="submenu11"
+            data-bs-parent="#menu"
+          >
+            <li class="">
+              <a href="{%  url 'feedback_list' %}" class="nav-link px-3">
+                <span class=""> <i class="bi bi-star mr5"></i> Feedback </span>
+              </a>
+            </li>
+            <li class="sublink">
+              <a href="{% url 'msg_list' %}" class="nav-link px-3">
+                <span class="">
+                  <i class="bi bi-chat-left-text mr5"></i> Messages</span
+                >
+              </a>
+            </li>
+          </ul>
+        </li>
+        <hr />
+
+        <li class="nav-item sidenav-drop">
+          <a
+            class="nav-link sidebar-link link"
+            href="#submenu3"
+            data-bs-toggle="collapse"
+          >
+            <i class="bi bi-gear mr10"></i>Settings
+          </a>
+          <ul
+            class="collapse navbar-nav drop-menu"
+            id="submenu3"
+            data-bs-parent="#menu"
+          >
+            <li class="">
+              <a href="{%  url 'brand_list' %}" class="nav-link px-3">
+                <span class="">
+                  <i class="bi bi-postcard-heart mr5"></i> Brands</span
+                >
+              </a>
+            </li>
+            <li class="">
+              <a href="{%  url 'slider_list' %}" class="nav-link px-3">
+                <span class=""> <i class="bi bi-sliders mr5"></i> Sliders</span>
+              </a>
+            </li>
+            <li class="sublink">
+              <a href="{% url 'site_list' %}" class="nav-link px-3">
+                <span class=""> <i class="bi bi-globe mr5"></i> Sites</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'keywords_list' %}" class="nav-link px-3">
+                <span class="">
+                  <i class="bi bi-key mr5"></i>
+                  Key & Discription
+                </span></a
+              >
+            </li>
+            <li>
+              <a href="{% url 'feature_list' %}" class="nav-link px-3">
+                <span class="d-none d-sm-inline">
+                  <i class="bi bi-hand-thumbs-up mr5"></i>
+                  Features</span
+                ></a
+              >
+            </li>
+            <li>
+              <a href="{% url 'aboutcompany_list' %}" class="nav-link px-3">
+                <span class="d-none d-sm-inline">
+                  <i class="bi bi-building-gear mr5"></i>
+                  About Company
+                </span></a
+              >
+            </li>
+            <li>
+              <a href="{% url 'faq_list' %}" class="nav-link px-3">
+                <span class="d-none d-sm-inline">
+                  <i class="bi bi-question-circle mr5"></i>
+                  Faq</span
+                ></a
+              >
+            </li>
+            <li>
+              <a href="{% url 'oc_list' %}" class="nav-link px-3">
+                <span class="d-none d-sm-inline">
+                  <i class="bi bi-people mr5"></i>
+                  Clients</span
+                ></a
+              >
+            </li>
+            <li>
+              <a href="{% url 'gf_list' %}" class="nav-link px-3">
+                <span class="d-none d-sm-inline">
+                  <i class="bi bi-gear-wide-connected mr5"></i>
+                  Google feed</span
+                ></a
+              >
+            </li>
+            <li>
+              <a href="{% url 'gf_list' %}" class="nav-link px-3">
+                <span class="d-none d-sm-inline"> </span>
+              </a>
+            </li>
+        </ul>
+    </div>
+  </nav>
+
+  {% endif  %}
+  {% endif  %}

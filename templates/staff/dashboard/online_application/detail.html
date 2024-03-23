@@ -1,0 +1,122 @@
+{% extends 'layouts/base_dash.html'%} {% block content %}
+<main class="main-content">
+  <div class="bg-light">
+    <div
+      class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-1"
+    >
+      <h1 class="h4 ms-2">{% if pagename %}{{pagename}}{% endif %}</h1>
+      <div class="btn-toolbar mb-2 me-1 mb-md-1">
+        <div class="btn-group me-1">
+          <a href="{% url 'online_application_list'%}" type="button" class="btn btn-warning"
+            ><i class="bi bi-arrow-left"></i> Back</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- Dashboard Counts Section-->
+    <div class="card box-lg">
+      <div class="row">
+        <div class="cw-100">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th width="25%" scope="col">Photo</th>
+                <th width="25%" scope="col">Sign</th>
+                <th width="25%" scope="col">Application No</th>
+                <th width="25%" scope="col">QR CODE</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  <img
+                    src="{{ online_application.photo.url }}"
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      text-align: center;
+                      border-radius: 100%;
+                    "
+                  />
+                </td>
+
+                <td>
+                  <img
+                  src="{{ online_application.sign.url }}"
+                  style="
+                    width: 40px;
+                    height: 40px;
+                    text-align: center;
+                    border-radius: 100%;
+                  "
+                /></td>
+                 <td>{{ online_application.application_no }}</td>
+                 <td>
+                  <div class="qr-img">
+                  {% if qr_code_img %}
+                  <img src="/media/QR/{{ qr_code_img }}"  />
+                  {% endif %}
+                </div></td>
+              </tr>
+            </tbody>
+            <thead>
+              <tr>
+                <th width="25%" scope="col">Name</th>
+                <th width="25%" scope="col">Email</th>
+                <th width="25%" scope="col">Mobile</th>
+                <th width="25%" scope="col">Current Company</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ online_application.name }}</td>
+                <td>{{ online_application.email }}</td>
+                 <td>{{ online_application.mobile }}</td>
+                 <td>{{ online_application.current_company }}</td>
+              </tr>
+            </tbody>
+            <thead>
+              <tr>
+                <th width="25%" scope="col">Current Salary</th>
+                <th width="25%" scope="col">Expected Salary</th>
+                <th width="25%" scope="col">Total Exprience</th>
+                <th width="25%" scope="col">Skills</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ online_application.current_salary }}</td>
+                <td>{{ online_application.expected_salary }}</td>
+                 <td>{{ online_application.exprience }}</td>
+                 <td>{{ online_application.skills }}</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td>{{ online_application.name }}</td>
+                <td>{{ online_application.email }}</td>
+                 <td>{{ online_application.mobile }}</td>
+                 <td>{{ online_application.current_company }}</td>
+              </tr>
+            </tbody>
+            <thead>
+              <tr>
+                <th width="25%" scope="col">Projects Done</th>
+                <th width="25%" scope="col">Awards & Achievments </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ online_application.project_done }}</td>
+                <td>{{ online_application.awards }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

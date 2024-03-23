@@ -1,0 +1,76 @@
+<main class="main-content">
+  <div class="container">
+    <section class="pb-0 flex-wrap flex-md-nowrap align-items-center pt-3">
+      <div class="row">
+        <div class="col-lg-3 col-xs-6">
+          <div class="box text-white round10">
+            <i class="bi bi-person-check rounded-circle bg-orange"></i>
+            <span class="heading">Users</span>
+            <span class="count"><span>{{ user_count }}</span></span>
+            <div class="progress">
+              <div
+                class="progress-bar bg-success"
+                role="progressbar"
+                style="width: {{ user_count }}%"
+                aria-valuenow="{{ user_count }}"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+          <div class="box text-info round10">
+            <i class="bi bi-send-check rounded-circle bg-dark"></i>
+            <span class="heading">Forms</span>
+            <span class="count"><span>{{ form_count }}</span></span>
+            <div class="progress">
+              <div
+                class="progress-bar bg-info"
+                role="progressbar"
+                style="width:{{ form_count }}%"
+                aria-valuenow="{{ form_count }}"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+          <div class="box text-white round10">
+            <i class="bi bi-chat-right-text rounded-circle bg-primary"></i>
+            <span class="heading">Feedback</span>
+            <span class="count">{{ feedback_count }}</span>
+            <div class="progress">
+              <div
+                class="progress-bar bg-warning"
+                role="progressbar"
+                style="width: {{ feedback_count }}%"
+                aria-valuenow="{{ feedback_count }}"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+          <div class="box text-white round10">
+            <i class="bi bi-envelope-at rounded-circle bg-info"></i>
+            <span class="heading">Message</span>
+            <span class="count"><span>{{ msg_count }}</span></span>
+            <div class="progress">
+              <div
+                class="progress-bar bg-info"
+                role="progressbar"
+                style="width:{{ msg_count }}%"
+                aria-valuenow="{{ msg_count }}"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>

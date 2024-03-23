@@ -1,0 +1,56 @@
+<div class="bg-light pt-2 pb-5 px-1">
+  <div class="container text-center">
+    <div class="container main-form pt-2 pb-3 px-4">
+      <h2 class="text-white pb-3">Free Quotes</h2>
+      <li class="main-form-errors">{{ enquiryform.captcha.errors }}</li>
+      <form
+        method="post"
+        id="MainForm"
+        action="{%  url 'Home' %}"
+        enctype="multipart/form-data"
+      >
+        {% csrf_token %}
+        <div class="row g-2 mb-3">
+          <div class="col-md form-floating">
+            {{ enquiryform.name }}
+            <li class="main-form-errors">{{ enquiryform.name.errors }}</li>
+            <label for="floatingInput text-bold">
+              <i class="bi bi-people-fill mr5 form-i"></i>
+              <span class="text-color-black fw-bold"> Name</span></label
+            >
+          </div>
+          <div class="col-md form-floating">
+            {{ enquiryform.email }}
+            <li class="main-form-errors">{{ enquiryform.email.errors }}</li>
+            <label for="floatingInput">
+              <i class="bi-envelope-at-fill mr5 form-i"></i>
+              <span class="text-color-black fw-bold">Email</span>
+            </label>
+          </div>
+        </div>
+        <div class="row g-2 mb-3">
+          <div class="col-md-10 form-floating">
+            {{ enquiryform.message }}
+            <li class="main-form-errors">{{ enquiryform.message.errors }}</li>
+            <label for="floatingInput"
+              ><i class="bi bi-motherboard-fill mr5 form-i"></i>
+              <span class="text-color-black fw-bold">Message</span>
+            </label>
+          </div>
+          <div class="col-md-2 form-floating">
+            <div class="input-group">
+              <button
+                class="form-control button-main-form"
+                type="submit"
+                id="btn1"
+                value="Submit"
+              >
+                <i class="bi bi-send-check mr10"></i>Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

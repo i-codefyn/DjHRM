@@ -1,0 +1,158 @@
+{% extends 'layouts/_base.html' %} {% block content %}
+<!-- Contact Form -->
+<section class="bg-light">
+  <div class="container pt-5">
+    <div class="contact-container">
+      <div class="p-4">
+        <div class="col bg-white rounded-5 p-4 mt-4 text-center">
+          <h2 class="pb-2">Online Application Form</h2>
+          <form
+            method="post"
+            id="MainForm"
+            action="{%  url 'apply_link' %}"
+            enctype="multipart/form-data"
+          >
+            {% load crispy_forms_tags %} {% csrf_token %}
+            <div class="row g-2 mb-3">
+              <div class="col-md form-floating">
+                {{ form.name }}
+                <li class="main-form-errors">{{ form.name.errors }}</li>
+                <label for="floatingInput text-bold">
+                  <i class="bi bi-people-fill mr5 form-i"></i>
+                  <span class="text-color-black fw-bold"> Name</span></label
+                >
+              </div>
+              <div class="col-md form-floating">
+                {{ form.email }}
+                <li class="main-form-errors">{{ form.email.errors }}</li>
+                <label for="floatingInput">
+                  <i class="bi-envelope-at-fill mr5 form-i"></i>
+                  <span class="text-color-black fw-bold">Email</span>
+                </label>
+              </div>
+              <div class="col-md form-floating">
+                {{ form.mobile }}
+                <li class="main-form-errors">{{ form.mobile.errors }}</li>
+                <label for="floatingInput"
+                  ><i class="bi bi-motherboard-fill mr5 form-i"></i>
+                  <span class="text-color-black fw-bold">Mobile</span>
+                </label>
+              </div>
+            </div>
+            <div class="row g-2 mb-3">
+              <div class="col-md-4 form-floating">
+                {{ form.current_company }}
+                <li class="errors">{{ form.current_company.errors }}</li>
+                <label for="floatingInput text-bold">
+                  <i class="bi bi-chat-left mr5 form-i"></i>
+                  <span class="text-color-black fw-bold mb-3"
+                    >Current Company</span
+                  >
+                </label>
+              </div>
+              <div class="col-md-2 form-floating">
+                {{ form.exprience }}
+                <li class="errors">{{ form.exprience.errors }}</li>
+                <label for="floatingInput text-bold">
+                  <i class="bi bi-clipboard-check mr5 form-i"></i>
+                  <span class="text-color-black fw-bold mb-3">Exprience </span>
+                </label>
+              </div>
+              <div class="col-md-3 form-floating">
+                {{ form.current_salary }}
+                <li class="errors">{{ form.current_salary.errors }}</li>
+                <label for="floatingInput text-bold">
+                  <i class="bi bi-currency-rupee mr5 form-i"></i>
+                  <span class="text-color-black fw-bold mb-3"
+                    >current Salary
+                  </span>
+                </label>
+              </div>
+              <div class="col-md-3 form-floating">
+                {{ form.expected_salary }}
+                <li class="errors">{{ form.expected_salary.errors }}</li>
+                <label for="floatingInput text-bold">
+                  <i class="bi bi-currency-rupee mr5 form-i"></i>
+                  <span class="text-color-black fw-bold mb-3"
+                    >Expected Salary
+                  </span>
+                </label>
+              </div>
+            </div>
+            <div class="row g-2 mb-3">
+              <div class="col-md form-floating">
+                {{ form.awards }}
+                <li class="errors">{{ form.awards.errors }}</li>
+                <label for="floatingInput text-bold">
+                  <i class="bi bi-award mr5 form-i"></i>
+                  <span class="text-color-black fw-bold mb-3"
+                    >Awards & Achievments
+                  </span>
+                </label>
+              </div>
+            </div>
+            <div class="row g-2 mb-3">
+              <div class="col-md form-floating">
+                {{ form.skills }}
+                <li class="errors">{{ form.skills.errors }}</li>
+                <label for="floatingInput text-bold">
+                  <i class="bi bi-briefcase mr5 form-i"></i>
+                  <span class="text-color-black fw-bold mb-3">Skills </span>
+                </label>
+              </div>
+            </div>
+            <div class="row g-2 mb-3">
+              <div class="col-md form-floating">
+                {{ form.project_done }}
+                <li class="errors">{{ form.project_done.errors }}</li>
+                <label for="floatingInput text-bold">
+                  <i class="bi bi-boxes mr5 form-i"></i>
+                  <span class="text-color-black fw-bold mb-3"
+                    >Project Done
+                  </span>
+                </label>
+              </div>
+            </div>
+            <div class="row g-2 mb-3">
+              <div class="col-md form-floating">
+                {{ form.address }}
+                <li class="errors">{{ form.address.errors }}</li>
+                <label for="floatingInput text-bold">
+                  <i class="bi bi-geo-alt mr5 form-i"></i>
+                  <span class="text-color-black fw-bold mb-3"
+                    >Address
+                  </span>
+                </label>
+              </div>
+            </div>
+              <div class="col-md-2 pt-3 form-floating">
+                <div class="input-group">
+                  <button
+                    class="form-control button-main-form"
+                    type="submit"
+                    id="btn1"
+                    value="Submit"
+                  >
+                    <i class="bi bi-send-check mr10"></i>Submit
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Contact Form -->
+<script>
+  // FOrm Submit
+  $(document).ready(function () {
+    $(".preloader").hide();
+    $("#ApplyForm").on("submit", function () {
+      $(".preloader").fadeIn();
+    }); //submit
+  });
+  // end form submit
+</script>
+{% endblock %}

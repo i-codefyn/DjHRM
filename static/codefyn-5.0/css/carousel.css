@@ -1,0 +1,112 @@
+/* Carousel base class */
+.carousel {
+  margin-bottom: 0rem;
+}
+
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  top: 14rem;
+  left: 0.5rem;
+  z-index: 10;
+}
+.carousel-caption h1 {
+  color: #111 !important;
+  background-color: rgba(199, 199, 199, 0.4) !important;
+  border-radius: 5px;
+}
+.carousel-caption p {
+  color: #111 !important;
+  background-color: rgba(199, 199, 199, 0.4) !important;
+  border-radius: 5px;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 100vh;
+  text-align: justify;
+  text-justify: inter-word;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  /* filter: blur(8px);
+  -webkit-filter: blur(1px); */
+}
+
+.carousel-indicators button {
+  width: 10px !important;
+  height: 10px !important;
+  color: #444 !important;
+  background-color: #fff !important;
+  border-radius: 50%;
+}
+
+.carousel-indicators .active {
+  background: linear-gradient(to bottom, #660066 0%, #0033cc 100%);
+}
+.carousel-btn {
+  background-color: #111;
+  font-size: 30px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 8px;
+  left: 0;
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 200px) and (max-width: 350px) {
+  .carousel-item {
+    height: 40vh;
+  }
+  .carousel-btn {
+    font-size: 20px;
+    padding: 2px 2px 2px 2px;
+    border-radius: 50%;
+    margin-bottom: 50%;
+  }
+  .carousel-caption {
+    top: 5rem;
+  }
+  .carousel-item > img {
+    height: 40vh;
+  }
+}
+
+@media (min-width: 350px) and (max-width: 500px) {
+  .carousel-item {
+    height: 40vh;
+  }
+  .carousel-btn {
+    font-size: 20px;
+    padding: 2px 2px 2px 2px;
+    border-radius: 50%;
+    margin-bottom: 50%;
+  }
+  .carousel-caption {
+    top: 5rem;
+  }
+  .carousel-item > img {
+    height: 40vh;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 900px) {
+  .carousel-item {
+    height: 40vh;
+  }
+  .carousel-btn {
+    font-size: 20px;
+    padding: 2px 2px 2px 2px;
+    border-radius: 50%;
+    margin-bottom: 50%;
+  }
+  .carousel-caption {
+    top: 5rem;
+  }
+  .carousel-item > img {
+    height: 40vh;
+  }
+}

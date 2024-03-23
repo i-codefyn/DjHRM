@@ -1,0 +1,204 @@
+
+<div class="invoice-box">
+  <table cellpadding="0" cellspacing="0">
+    <h5 style="text-align: center;align-items: center; font-weight: 600;">{{ doc_name }}</h5>
+  <tr class="top_rw">
+     <td colspan="2">
+
+        <table style="width:100%;">
+          <tr>
+            <td style="width:30%;">
+              <div class="qr-img">
+              {% if photo %}
+                  <img src="/media/{{ photo }}" alt="photo">
+              {% endif %}
+          </div>
+        </td>
+            <td style="width:40%; padding:5px; align-content: center;">
+              <pdf:barcode value="{{ application_no }}" type="code128" humanreadable="1" align="bottom" /></td>
+            <td style="width:30%;">
+              <div class="qr-img">
+              {% if img_name %}
+                  <img src="/media/{{ img_name }}" alt="qr code">
+              {% endif %}
+          </div>
+        </td>
+      </tr>
+      </table>
+      <tr class="information">
+            <td colspan="3">
+              <table>
+                  <tr>
+                     <td style="width:100%;">
+                      <table class="info">
+                        <tr>
+                          <td style="width:20%;" ><b>Application No:</b></td>
+                          <td style="width:80%;">{{ application_no }}</td>
+                        </tr>
+                        <tr>
+                          <td style="width:20%;" ><b>Name:</b></td>
+                          <td style="width:80%;">{{ name }}</td>
+                        </tr>
+                        <tr>
+                        <td style="width:20%;"><b>Email:</b></td>
+                        <td style="width:80%;">{{ email }}</td>
+                        </tr>
+                         <tr>
+                          <td style="width:20%;"><b>Mobile:</b></td>
+                          <td style="width:80%;">{{ mobile }}</td>
+                        </tr>
+                          <tr>
+                            <td style="width:20%;"><b>Current Company:</b></td>
+                            <td style="width:80%;">{{ current_company }}</td>
+                          </tr>
+                          <tr>
+                          <td style="width:20%;"><b>Current Salary:</b></td>
+                          <td style="width:80%;">{{ current_salary }}</td>
+                          </tr>
+                           <tr>
+                            <td style="width:20%;"><b>Expected Salary:</b></td>
+                            <td style="width:80%;">{{ expected_salary }}</td>
+                          </tr>
+                          <tr>
+                            <td style="width:20%;"><b>Exprience</b></td>
+                            <td style="width:80%;">{{ exprience }}</td>
+                          </tr>
+                          <tr>
+                            <td style="width:20%;"><b>Skills:</b></td>
+                            <td style="width:80%;">{{ skills}} </td>
+                          </tr>
+                          <tr>
+                            <td style="width:20%;"><b>Project Done:</b></td>
+                            <td style="width:80%;">{{ project_done }}</td>
+                          </tr>
+                      </table>
+                      </td>
+
+
+                  </tr>
+              </table>
+          </td>
+      </tr>
+      <tr>
+         <td colspan="3">
+           <table cellspacing="0px" cellpadding="2px">
+              <tr>
+
+              </tr>
+               <tr>
+                  <td width="50%">
+                  </td>
+                  <td  class="sign"> <div>
+                    <img src="{{ app.app_stamp.url }}" class="stamp" >
+
+                  </div>
+                       <b> Authorized Signature </b>
+                      <br>
+                      <br>
+                      ...................................
+
+
+                      <br>
+                      <br>
+                      <br>
+                  </td>
+              </tr>
+           </table>
+         </td>
+      </tr>
+  </table>
+</div>
+
+<style>
+  .info td{
+    border: 1px solid #ccc;
+  }
+  .sign{
+    text-align: center;
+    align-items: center;
+    align-content: center;
+  }
+.stamp{
+
+  height: 80px;
+  width: 80px;
+  margin-right: 5px;
+}
+.top_rw{
+  background-color:#f4f4f4;
+}
+  .td_w{
+
+
+  }
+
+  button{
+    padding:5px 10px; font-size:14px;
+  }
+    .invoice-box {
+        max-width: 890px;
+        margin: auto;
+        padding:5px;
+        border: 1px solid #eee;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+        font-size: 12px;
+        color: #555;
+    }
+    .invoice-box table {
+        width: 100%;
+        line-height: inherit;
+        text-align: left;
+        border-bottom: solid 1px #ccc;
+    }
+    .invoice-box table td {
+        padding: 5px;
+        vertical-align:middle;
+    }
+    .invoice-box table tr td:nth-child(2) {
+        text-align: right;
+    }
+    .invoice-box table tr.top table td {
+        padding-bottom: 10px;
+    }
+    .invoice-box table tr.top table td.title {
+        font-size: 45px;
+        line-height: 45px;
+        color: #333;
+    }
+    .invoice-box table tr.information table td {
+        padding-bottom: 5px;
+    }
+    .invoice-box table tr.heading td {
+        background: #eee;
+        border-bottom: 10px solid #ddd;
+        font-weight: bold;
+        font-size:12px;
+    }
+    .invoice-box table tr.details td {
+        padding-bottom: 10px;
+    }
+    .invoice-box table tr.item td{
+        border-bottom: 1px solid #eee;
+    }
+    .invoice-box table tr.item.last td {
+        border-bottom: none;
+    }
+    .invoice-box table tr.total td:nth-child(2) {
+        border-top: 2px solid #eee;
+        font-weight: bold;
+    }
+    @media only screen and (max-width: 600px) {
+        .invoice-box table tr.top table td {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+        .invoice-box table tr.information table td {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+    }
+
+    </style>
+

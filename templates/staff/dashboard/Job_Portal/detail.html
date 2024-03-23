@@ -1,0 +1,55 @@
+{% extends 'layouts/base_dash.html'%} {% block content %}
+<main class="main-content">
+  <div class="bg-light">
+    <div
+      class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-1"
+    >
+      <h1 class="h4 ms-2">{% if pagename %}{{pagename}}{% endif %}</h1>
+      <div class="btn-toolbar mb-2 me-1 mb-md-1">
+        <div class="btn-group me-1">
+          <a href="{% url 'job_list'%}" type="button" class="btn btn-warning"
+            ><i class="bi bi-arrow-left"></i> Back</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- Dashboard Counts Section-->
+    <div class="card box-lg">
+      <div class="row">
+        <div class="cw-100">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th style="width:30%" scope="col">Post Name</th>
+                <th style="width:30%" scope="col">Exprience</th>
+                <th style="width:30%" scope="col">Salary</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ jobs.post_name }}</td>
+                <td>{{ jobs.exprience }}</td>
+                <td>{{ jobs.salary }}</td>
+              </tr>
+            </tbody>
+            <thead>
+              <tr>
+                <th style="width:30%" scope="col">Apply Link</th>
+                <th style="width:30%" scope="col">Last Date</th>
+                <th style="width:30%" scope="col">Descriptions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ jobs.apply_link }}</td>
+                <td>{{ jobs.last_date }}</td>
+                <td>{{ jobs.descriptions }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

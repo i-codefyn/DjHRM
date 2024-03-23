@@ -1,0 +1,17 @@
+{% extends 'layouts/_base.html'%} {% block content %}
+{% include 'home/includes/slider.html' %}
+{% include 'home/includes/main_form.html' %}
+{% include 'home/includes/services.html' %}
+{% include 'home/includes/features.html' %}
+    <script>
+      // FOrm Submit
+      $(document).ready(function () {
+        $(".preloader").hide();
+        $("#MainForm").on("submit", function () {
+          $(".preloader").fadeIn();
+        }); //submit
+      });
+      // end form submit
+    </script>
+    {% endblock %}
+
